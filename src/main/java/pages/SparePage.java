@@ -2,14 +2,14 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 public class SparePage extends ParentPage {
 
-    @FindBy(xpath = ".//*[@class='fa fa-plus']") //here we have 2 classes, so we can't use className instead of xpath
-    private WebElement buttonAdd;
+    @FindBy(xpath = ".//*[@class='fa fa-plus']")
+    private Link buttonAdd;
 
     public SparePage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares");

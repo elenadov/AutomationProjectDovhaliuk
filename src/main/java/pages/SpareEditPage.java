@@ -1,29 +1,29 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 public class SpareEditPage extends ParentPage {
 
     @FindBy(id = "spares_spareName")
-    private WebElement spareNameInput;
+    private Link spareNameInput;
 
     @FindBy(id = "spares_spareType")
-    private WebElement spareTypeDD;
+    private Link spareTypeDD;
 
     @FindBy(xpath = ".//option[4]")
-    private WebElement valueOfDropdown;
+    private Link valueOfDropdown;
 
     @FindBy(name = "add")
-    private WebElement buttonCreate;
+    private Link buttonCreate;
 
     @FindBy(name = "add")
-    private WebElement submitButton;
+    private Link submitButton;
 
     @FindBy(name = "delete")
-    private WebElement buttonDelete;
+    private Link buttonDelete;
 
     public SpareEditPage(WebDriver webDriver) {
         super(webDriver, "/dictionary/spares/edit");

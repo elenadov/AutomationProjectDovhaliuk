@@ -1,53 +1,50 @@
 package pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
-
-import java.util.ArrayList;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 public class DealsEditPage extends ParentPage {
 
     @FindBy(id = "deal_dealDate_date_day")
-    private WebElement dateDD;
+    private Link dateDD;
 
     @FindBy(id = "deal_dealDate_date_month")
-    private WebElement monthDD;
+    private Link monthDD;
 
     @FindBy(id = "deal_dealDate_date_year")
-    private WebElement yearDD;
+    private Link yearDD;
 
     @FindBy(id = "deal_dealDate_time_hour")
-    private WebElement hoursDD;
+    private Link hoursDD;
 
     @FindBy(id = "deal_dealDate_time_minute")
-    private WebElement minutesDD;
+    private Link minutesDD;
 
     @FindBy(xpath = "//select[@id='deal_dealDate_date_month']//option[")
-    private WebElement valueOfMonthDD;
+    private Link valueOfMonthDD;
 
     @FindBy(id = "deal_dealType")
-    private WebElement dealTypeDD;
+    private Link dealTypeDD;
 
     @FindBy(xpath = ".//*[@id='deal_dealType']//option[contains(text(),'BIG SALE')]")
-    private WebElement valueOfDealTypeDD;
+    private Link valueOfDealTypeDD;
 
     @FindBy(id = "deal_customer")
-    private WebElement customerDD;
+    private Link customerDD;
 
     @FindBy(xpath = ".//select[@id='deal_customer']//option[4]")
-    private WebElement valueOfCustomerDD;
+    private Link valueOfCustomerDD;
 
     @FindBy(id = "deal_provider")
-    private WebElement proviserDD;
+    private Link proviserDD;
 
     @FindBy(name = "add")
-    private WebElement submitButton;
+    private Link submitButton;
 
     @FindBy(xpath = ".//*[@class='btn btn-danger pull-right']")
-    private WebElement buttonDelete;
+    private Link buttonDelete;
 
 
     public DealsEditPage(WebDriver webDriver) {

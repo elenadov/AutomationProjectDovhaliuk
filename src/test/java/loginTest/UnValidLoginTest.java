@@ -38,5 +38,7 @@ public class UnValidLoginTest extends AbstractParentTest {
         loginPage.clickButtonVhod();
 
         checkExpectedResult("Avatar is not present", !homePage.isAvatarDisplayed());
+        checkExpectedResult("Input login is not present", loginPage.isInputLoginPresent());
+        checkExpectedResult("Input password is not present", loginPage.isInputPasswordPresent());
     }
 }
