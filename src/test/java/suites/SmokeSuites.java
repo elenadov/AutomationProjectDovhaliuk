@@ -2,8 +2,11 @@ package suites;
 
 import dealTest.DealTest;
 import loginTest.SmokeValidLoginTest;
+import loginTest.UnValidLoginTest;
+import loginTest.ValidLoginTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import providersTest.OurFirmProviderCreationTest;
 import providersTest.PrivateProviderCreationTest;
 import spareTest.SpareTest;
 
@@ -13,7 +16,10 @@ import spareTest.SpareTest;
                 SmokeValidLoginTest.class,
                 SpareTest.class,
                 DealTest.class,
-                PrivateProviderCreationTest.class
+                PrivateProviderCreationTest.class,
+                OurFirmProviderCreationTest.class,
+                UnValidLoginTest.class,
+                ValidLoginTest.class
         }
 )
 

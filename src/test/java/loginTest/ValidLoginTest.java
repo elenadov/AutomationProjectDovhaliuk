@@ -28,7 +28,7 @@ public class ValidLoginTest extends AbstractParentTest {
         InputStream spreadsheet
                 = new FileInputStream(ConfigClass.getCfgValue("DATA_FILE_PATH")
                 +"testDataSuit.xls");
-        return new SpreadsheetData(spreadsheet, "InvalidLogOn").getData();
+        return new SpreadsheetData(spreadsheet, "ValidLoginTest").getData();
     }
 
     @Test
