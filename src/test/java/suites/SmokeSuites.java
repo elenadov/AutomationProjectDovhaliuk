@@ -17,9 +17,7 @@ import spareTest.SpareTest;
                 SpareTest.class,
                 DealTest.class,
                 PrivateProviderCreationTest.class,
-                OurFirmProviderCreationTest.class,
-                UnValidLoginTest.class,
-                ValidLoginTest.class
+                OurFirmProviderCreationTest.class
         }
 )
 
