@@ -4,6 +4,7 @@ import dealTest.DealTest;
 import loginTest.SmokeValidLoginTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import providersTest.PrivateProviderCreationTest;
 import spareTest.SpareTest;
 
 @RunWith(Suite.class)
@@ -11,7 +12,8 @@ import spareTest.SpareTest;
         {
                 SmokeValidLoginTest.class,
                 SpareTest.class,
-                DealTest.class
+                DealTest.class,
+                PrivateProviderCreationTest.class
         }
 )
 

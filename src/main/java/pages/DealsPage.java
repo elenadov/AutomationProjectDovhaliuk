@@ -2,14 +2,14 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import parentPage.ParentPage;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 public class DealsPage extends ParentPage {
 
     @FindBy(xpath = ".//*[@class='btn btn-info btn-sm']")
-    private WebElement buttonAdd;
+    private Link buttonAdd;
 
     public DealsPage(WebDriver webDriver) {
         super(webDriver, "/deal");

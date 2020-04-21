@@ -8,16 +8,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.htmlelements.element.TypifiedElement;
 
 public class ActionsWithWebElements {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
-    public WebDriverWait webDriverWait_10, webDriverWait_15;
+    public WebDriverWait webDriverWait_10;
 
     public ActionsWithWebElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         webDriverWait_10 = new WebDriverWait(webDriver, 10);
-        webDriverWait_15 = new WebDriverWait(webDriver, 15);
     }
 
     public void enterTextIntoTextField(WebElement webElement, String text) {
@@ -40,14 +40,23 @@ public class ActionsWithWebElements {
         try{
             webDriverWait_10.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
-            logger.info("Element was clicked successfully");
+            logger.info("Element was clicked successfully" + getElementName(webElement));
         }catch(Exception e){
             stopTestAndPrintMessage();
         }
     }
 
+    private String getElementName(WebElement webElement) {
+        String elementName = "";
+        if(webElement instanceof TypifiedElement){
+            elementName = " '" + ((TypifiedElement)webElement).getName() + "' ";
+        }
+        return elementName;
+    }
+
     public boolean isElementDisplayed(WebElement webElement) {
         try{
+            webDriverWait_10.until(ExpectedConditions.visibilityOf(webElement));
             boolean state = webElement.isDisplayed();
             logger.info("IsElementDisplay -> " + state);
             return state;
@@ -59,6 +68,7 @@ public class ActionsWithWebElements {
 
     public void selectVisibleTextFromDDByJava(WebElement dropdown, String text) {
         try{
+            webDriverWait_10.until(ExpectedConditions.textToBePresentInElement(dropdown, text));
             Select select = new Select(dropdown);
             select.selectByVisibleText(text);
             logger.info(text + " was selected in dropdown");
@@ -79,7 +89,6 @@ public class ActionsWithWebElements {
 
     public void clickOnElement(String xpath) {
         try{
-            webDriverWait_10.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             clickOnElement(webDriver.findElement(By.xpath(xpath)));
         }catch(Exception e){
             stopTestAndPrintMessage();

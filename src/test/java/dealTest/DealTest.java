@@ -27,7 +27,7 @@ public class DealTest extends AbstractParentTest {
         loginPage.fillingLoginFormWithSubmit("Student", "909090");
 
         homePage.checkCurrentURL();
-        homePage.clickOnDealMenu();
+        homePage.leftMenu.clickOnSubmenuDeal();
 
         dealsPage.checkCurrentURL();
         dealsPage.clickOnAddButton();

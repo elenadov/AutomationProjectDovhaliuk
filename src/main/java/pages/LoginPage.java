@@ -3,20 +3,21 @@ package pages;
 import libs.ConfigClass;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import parentPage.ParentPage;
+import ru.yandex.qatools.htmlelements.element.Link;
 
 public class LoginPage extends ParentPage {
 
     @FindBy(name = "_username")
-    private WebElement inputLogin;
+    private Link inputLogin;
 
     @FindBy(id = "password")
-    private WebElement inputPassword;
+    private Link inputPassword;
 
     @FindBy(tagName = "button")
-    private WebElement buttonVhod;
+    private Link buttonVhod;
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver, "/login");
@@ -25,7 +26,7 @@ public class LoginPage extends ParentPage {
     public void openPage() {
         try{
             webDriver.get(ConfigClass.getCfgValue("base_url") + "/login");
-
+            webDriverWait_10.until(ExpectedConditions.urlToBe(ConfigClass.getCfgValue("base_url") + "/login"));
         }catch(Exception e){
             e.printStackTrace();
             Assert.fail("Can't work with browser");

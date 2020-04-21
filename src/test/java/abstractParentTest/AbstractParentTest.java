@@ -23,6 +23,8 @@ public class AbstractParentTest {
     protected SpareEditPage spareEditPage;
     protected DealsPage dealsPage;
     protected DealsEditPage dealsEditPage;
+    protected ProvidersPage providersPage;
+    protected ProvidersEditPage providersEditPage;
     private String pathToScreenShot;
     protected Utils utils;
 
@@ -47,6 +49,8 @@ public class AbstractParentTest {
         spareEditPage = new SpareEditPage(webDriver);
         dealsPage = new DealsPage(webDriver);
         dealsEditPage = new DealsEditPage(webDriver);
+        providersPage = new ProvidersPage(webDriver);
+        providersEditPage = new ProvidersEditPage(webDriver);
         utils = new Utils();
 
     }
